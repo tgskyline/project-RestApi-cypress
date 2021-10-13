@@ -30,8 +30,24 @@ describe('Automation of Test Rest API (Automação de Teste Rest API', () => {
         senha: "czz2212"
       }
     }).its('body.token').should('not.be.empty')
+      .then(token => {
+        cy.request({
+          url: 'https://barrigarest.wcaquino.me/contas',
+          method: 'POST',
+          headers: { Authorization: `JWT ${token}` },
+          body: {
+            nome: 'DayTrade'
+          }
+        })//.then(res => console.log(res))
 
-    //.then(res => console.log(res)) Usei para analisar a resposta
+        // .then(res => console.log(res)) Usei para analisar a resposta
+      }).as('response')
+
+    cy.get('@response').then(res => {
+      expect(res.status).to.be.equal(201)
+      expect(res.body).to.have.property('id')
+      expect(res.body).to.be.property('nome', 'DayTrade')
+    })
   })
 
   it('Should edit account (Deve editar uma conta)', () => {
