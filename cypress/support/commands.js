@@ -54,9 +54,9 @@ Cypress.Commands.add('getToken', (user, passwd)=>{
       senha: passwd
     }
   }).its('body.token').should('not.be.empty')
-      // eslint-disable-next-line arrow-body-style
-      .then(token =>{
+    .then(token =>{
       return token
     })
 
 })
+//teste

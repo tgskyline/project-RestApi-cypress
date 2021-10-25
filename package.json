@@ -1,34 +1,28 @@
 {
-  "name": "project-restapi-cypress",
+  "name": "project-RestApi-cypress",
   "version": "1.0.0",
   "description": "Projeto de Automação de Teste E2E",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint index.js src/** --fix"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "cypress": "^8.6.0"
-  },
-  "devDependencies": {
+    "cypress": "^8.5.0",
     "cypress-xpath": "^1.6.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.2"
-<<<<<<< HEAD
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tgskyline/project-RestApi-cypress.git"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tgskyline/project-RestApi-cypress/issues"
   },
   "homepage": "https://github.com/tgskyline/project-RestApi-cypress#readme"
-=======
-  }
->>>>>>> develop
 }
