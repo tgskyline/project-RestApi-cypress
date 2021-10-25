@@ -21,7 +21,7 @@ describe('Automation of Test Rest API (Automação de Teste Rest API', () => {
   })
 
   it('Should insert account (Deve inserir uma conta)', () => {
-      cy.getToken('this.data.login','this.data.senha')
+      cy.getToken('tiagogomes','czz2212')
       .then(token => {
         cy.request({
           url: 'https://barrigarest.wcaquino.me/contas',
@@ -30,8 +30,8 @@ describe('Automation of Test Rest API (Automação de Teste Rest API', () => {
           body: {
             nome: 'DayTrade'
           }
-        })//.then(res => console.log(res))
-
+        })
+        //.then(res => console.log(res))
         // .then(res => console.log(res)) Usei para analisar a resposta
       }).as('response')
 

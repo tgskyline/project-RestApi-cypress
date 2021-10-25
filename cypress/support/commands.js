@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -47,12 +48,13 @@ Cypress.Commands.add('getToken', (user, passwd)=>{
     method: 'POST',
     url: 'https://barrigarest.wcaquino.me/signin',
     body: {
-      email: "tiagogomes",
+      email: user,
       redirecionar: false,
-      senha: "czz2212"
+      senha: passwd
     }
   }).its('body.token').should('not.be.empty')
-    .then(token =>{
+      // eslint-disable-next-line arrow-body-style
+      .then(token =>{
       return token
     })
 
