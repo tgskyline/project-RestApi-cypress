@@ -3,6 +3,10 @@
         "browser": true,
         "es2021": true
     },
+<<<<<<< HEAD
+=======
+    "extends": "eslint:recommended",
+>>>>>>> develop
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"

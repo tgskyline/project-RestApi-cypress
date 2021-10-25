@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -42,3 +43,19 @@ Cypress.Commands.add('resetApp', () => {
   cy.get(loc.MENU.RESET).click()
 })
 
+Cypress.Commands.add('getToken', (user, passwd)=>{
+  cy.request({
+    method: 'POST',
+    url: 'https://barrigarest.wcaquino.me/signin',
+    body: {
+      email: user,
+      redirecionar: false,
+      senha: passwd
+    }
+  }).its('body.token').should('not.be.empty')
+      // eslint-disable-next-line arrow-body-style
+      .then(token =>{
+      return token
+    })
+
+})
