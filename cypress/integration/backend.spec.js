@@ -12,7 +12,7 @@
 
 describe('Automation of Test Rest API (Automação de Teste Rest API', () => {
   before(() => {
-    cy.login('this.data.login', 'this.data.senha')
+    // cy.login('this.data.login', 'this.data.senha')
 
   })
 
@@ -21,15 +21,7 @@ describe('Automation of Test Rest API (Automação de Teste Rest API', () => {
   })
 
   it('Should insert account (Deve inserir uma conta)', () => {
-    cy.request({
-      method: 'POST',
-      url: 'https://barrigarest.wcaquino.me/signin',
-      body: {
-        email: "tiagogomes",
-        redirecionar: false,
-        senha: "czz2212"
-      }
-    }).its('body.token').should('not.be.empty')
+      cy.getToken('this.data.login','this.data.senha')
       .then(token => {
         cy.request({
           url: 'https://barrigarest.wcaquino.me/contas',
@@ -77,5 +69,5 @@ describe('Automation of Test Rest API (Automação de Teste Rest API', () => {
   it('Should remove a transaction (Deve remover uma transação)', () => {
 
   })
-
+  
 })
